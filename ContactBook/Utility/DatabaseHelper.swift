@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 import Contacts
 
-
 class DatabaseHelper: NSObject {
     
     enum ContactState : String {
@@ -62,9 +61,9 @@ class DatabaseHelper: NSObject {
                     let predicate = NSPredicate(format: "identifier == %@", identifier)
                     request.predicate = predicate
                     
-                    let tempCount = try context.count(for: request)
+                    let count = try context.count(for: request)
                     
-                    if(tempCount == 0) {
+                    if(count == 0) {
                         return ContactState.new
                     }
                     else {
