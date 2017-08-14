@@ -59,8 +59,8 @@ class DatabaseHelper: NSObject {
                 
                 if(count == 0) {
                     
-                    let tempPredicate = NSPredicate(format: "identifier == %@", identifier)
-                    request.predicate = tempPredicate
+                    let predicate = NSPredicate(format: "identifier == %@", identifier)
+                    request.predicate = predicate
                     
                     let tempCount = try context.count(for: request)
                     
